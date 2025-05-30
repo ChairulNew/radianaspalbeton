@@ -1,0 +1,110 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 300;
+}
+.navbar .logo .name {
+  color: var(--color-text);
+}
+.navbar .logo .name span {
+  color: var(--color-white);
+}
+.navbar.visible {
+  position: sticky;
+  background: var(--color-ui-secondary);
+  box-shadow: var(--shadow-1);
+}
+.navbar.visible .logo .name span {
+  color: var(--color-primary);
+}
+.navbar .box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar .nav_tabs .tab {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--color-white);
+  border-radius: var(--radius-3);
+}
+.navbar.visible .nav_tabs .tab {
+  color: var(--color-text);
+}
+.navbar .nav_tabs .tab.active {
+  color: var(--color-white);
+  background: var(--gradient-1);
+}
+.navbar .contact_btn {
+  background: var(--gradient-1);
+  color: var(--color-white);
+}
+.navbar .cancel_btn,
+.navbar .menu_btn {
+  display: none;
+  background: transparent;
+  font-size: 25px;
+}
+.navbar .cancel_btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.navbar .menu_btn {
+  font-size: 2rem;
+}
+/* styling untuk siderbar */
+.siderbar_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(1, 1, 1, 0.5);
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: none;
+}
+/* Responsive Navbar */
+@media (max-width: 1000px) {
+  .navbar .nav_tabs {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    min-height: 100vh;
+    max-width: 350px;
+    display: block;
+    background: var(--color-ui-secondary);
+    transition: var(--transition);
+    z-index: 350;
+    padding: 20px;
+    padding-top: 60px;
+  }
+  .navbar .nav_tabs.open {
+    left: 0;
+  }
+  .navbar .nav_tabs .tab {
+    color: var(--color-text);
+  }
+  .navbar .cancel_btn,
+  .navbar .menu_btn {
+    display: flex;
+  }
+  .siderbar_overlay {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar .contact_btn {
+    display: none;
+  }
+}
