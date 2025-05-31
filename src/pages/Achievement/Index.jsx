@@ -72,7 +72,7 @@ const Achievement = () => {
             <Odometer value={awards} className="title" />
             <h1 className="g-text title">+</h1>
           </div>
-          <small className="text_muted">Awards Winning</small>
+          <small className="text_muted">Penghargaan </small>
         </div>
       </div>
       {/* End Awards */}
